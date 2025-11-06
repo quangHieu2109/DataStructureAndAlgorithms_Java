@@ -1,0 +1,23 @@
+Stack là một thành phần trong Collections Framework. Nó đại diện cho cấu trúc dữ liệu
+    kiểu ngăn xếp (LIFO – Last In First Out), nghĩa là phần tử được thêm vào sau cùng sẽ được
+    lấy ra đầu tiên. Trong Java, Stack là một lớp kế thừa từ Vector và nằm trong gói java.util.
+    Mặc dù Stack vẫn được sử dụng, nhưng trong thực tế, Deque (như ArrayDeque) thường được
+    khuyến nghị hơn vì hiệu năng tốt hơn và linh hoạt hơn.
+Một số đặc điểm cần lưu ý về Stack:
+    -Lớp Stack có thể chứa nhiều phần tử trùng lặp.
+    -Duy trì thứ tự thêm phần tử (thứ tự ngăn xếp).
+    -Không có tính tuần đồng bộ (non-synchronized), cần cẩn thận khi dùng trong môi
+    trường đa luồng.
+    -Các thao tác thêm và lấy phần tử đều thực hiện ở đỉnh ngăn xếp.
+    -Có thể sử dụng các phương thức như push(), pop(), peek() để thao tác với ngăn xếp.
+Queue là một thành phần trong Collections Framework. Nó đại diện cho cấu trúc dữ liệu kiểu hàng
+    đợi (FIFO – First In First Out), nghĩa là phần tử được thêm vào đầu tiên sẽ được lấy ra đầu
+    tiên. Trong Java, Queue là một interface, và các lớp như LinkedList, PriorityQueue, ArrayDeque
+    đều triển khai interface này. Queue thường được dùng trong các bài toán xử lý luồng, hàng đợi
+     tác vụ, hoặc hệ thống xử lý sự kiện.
+Một số đặc điểm cần lưu ý về Queue:
+    -Interface Queue cho phép chứa các phần tử trùng lặp.
+    -Duy trì thứ tự thêm phần tử (thứ tự hàng đợi).
+    -Không đồng bộ mặc định, cần dùng ConcurrentLinkedQueue nếu làm việc trong môi trường đa luồng.
+    -Các thao tác thêm và lấy phần tử thực hiện ở hai đầu: thêm ở cuối, lấy ở đầu.
+    -Có thể sử dụng các phương thức như offer(), poll(), peek() để thao tác với hàng đợi.

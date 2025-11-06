@@ -1,0 +1,14 @@
+LinkedList là một thành phần của Collections Frameworks. Nó sử dụng cấu trúc danh sách
+    kép(doubly linked-list: con trỏ 2 chiều) để lưu trữ các phần tử và cung cấp một cấu trúc lưu trữ có dạng danh
+    sách liên kết (mỗi phần tử đều liên kết với phần tử trước và sau nó). LinkedList trong Java là
+    một lớp kế thừa lớp AbstractSequentialList và triển khai của interface List, Queue trong
+    Collections Framework. LinkedList hoạt động như 1 mảng động nên khi thêm hoặc xóa phần tử thì
+    kích thước của nó tự thay đổi.
+Một số đặc điểm cần lưu ý về LinkedList:
+    - Lớp LinkedList có thể chứa nhiều phần tử trùng lặp.
+    - Lớp LinkedList duy trì thứ tự điền các phần tử của nó.
+    - Lớp LinkedList không có tính tuần đồng bộ(non-synchronized), các thao tác bất đồng
+        bộ lên nó có thể gây ra các sai sót
+    - Thao tác với các phần tử trong LinkedList là nhanh vì không cần phải thực hiện dịch
+        chuyển bất kỳ phần tử nào
+    - Có thể sử dụng LinkedList như một List(danh sách), Stack(ngăn xếp) hay là Queue(hàng đợi)

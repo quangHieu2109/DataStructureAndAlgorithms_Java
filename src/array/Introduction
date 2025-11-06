@@ -1,0 +1,9 @@
+Mảng (Array):
+    - Là tập hợp các phần tử có CÙNG KIỂU DỮ LIỆU (DATA TYPE).
+    - Có địa chỉ tiếp nối nhau trên bộ nhớ (memory).
+    - Có thể chứ kiểu dữ liệu nguyên thủy (primitive type)
+        hoặc kiểu dữ liệu tham chiếu/đối tượng (object).
+    - Có kích thước cố định và không thể thay đổi.
+    - Truy cập phần tử dựa trên chỉ mục (index), chỉ mục bắt đầu từ 0 đến length-1.
+    -> Nếu biết trước chỉ mục thì truy cập phần tử của mảng rất nhanh.
+    -> Chỉ nên sử dụng khi biết trước khi số lượng phần tử là cố định và được biết trước

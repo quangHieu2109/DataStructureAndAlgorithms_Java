@@ -1,0 +1,12 @@
+Lớp ArrayList trong java là một lớp kế thừa lớp AbstractList và triển khai của List
+    Interface trong Collections Framework nên nó sẽ có một vài đặc điểm và phương thức tương
+    đồng với List. ArrayList được sử dụng như một mảng động để lưu trữ các phần tử.
+
+Những điểm cần ghi nhớ về ArrayList:
+    -Lớp ArrayList trong java có thể chứa các phần tử trùng lặp.
+    -Lớp ArrayList duy trì thứ tự của phần tử được thêm vào.
+    -Lớp ArrayList là không đồng bộ (non-synchronized).
+    -Lớp ArrayList cho phép truy cập ngẫu nhiên vì nó lưu dữ liệu theo chỉ mục.
+    -Lớp ArrayList trong java, thao tác chậm vì cần nhiều sự dịch chuyển nếu bất kỳ phần
+        tử nào bị xoá khỏi danh sách. Vì ArrayList được thiết kế dự trên mảng 1 chiều (Array)
+        nên khi 1 phần tử bị xóa thì cáo phần tử ở sau phải dồn lên trước để lấp đầy khoảng trống.

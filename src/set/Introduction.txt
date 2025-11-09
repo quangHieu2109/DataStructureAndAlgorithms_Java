@@ -3,8 +3,9 @@ Set là một interface kế thừa Collection interface trong java. Set trong j
     -Set được triển khai bởi Hashset, LinkedHashset, Treeset hoặc EnumSet.
     -HashSet lưu trữ các phần tử của nó trong bảng băm, là cách thực hiện tốt nhất, tuy nhiên
         nó không đảm bảo về thứ tự các phần tử được chèn vào.
-    -TreeSet lưu trữ các phần tử của nó trong một cây, sắp xếp các phần tử của nó dựa trên
+    -TreeSet lưu trữ các sắp xếp phần tử của nó trong một cây, các phần tử của nó dựa trên
         các giá trị của chúng, về cơ bản là chậm hơn HashSet.
     -LinkedHashSet được triển khai dưới dạng bảng băm với có cấu trúc dữ liệu danh sách liên kết,
         sắp xếp các phần tử của nó dựa trên thứ tự chúng được chèn vào tập hợp (thứ tự chèn).
     -EnumSet là một cài đặt chuyên biệt để sử dụng với các kiểu enum.
+* Set không thể truy cập phần tử bất kì mà phải duyệt tuần tự.

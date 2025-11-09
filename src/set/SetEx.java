@@ -59,5 +59,7 @@ public class SetEx {
         System.out.println("HashSet: " + toString(hashSet)); //[-1; 2; 3; 4; -5; 5; 6]
         System.out.println("LinkedHashSet: " + toString(linkedHashSet));//[3; 4; -1; 5; -5; 6; 2]
         System.out.println("TreeSet: " + toString(treeSet));//[-5; -1; 2; 3; 4; 5; 6]
+        Iterator itr = hashSet.iterator();
+
     }
 }

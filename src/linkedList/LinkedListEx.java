@@ -1,9 +1,6 @@
 package linkedList;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class LinkedListEx {
     //Constructor
@@ -75,13 +72,48 @@ public class LinkedListEx {
             System.out.print(obj.toString()+" ");
         }
     }
-    public static void main(String[] args) {
-        LinkedList<Integer> linkedList = new LinkedList<>();
-//        linkedList.add(1);
-//        linkedList.add(2);
-//        linkedList.remove();
-//        System.out.println(linkedList.remove());
-        System.out.println(linkedList.peekFirst());;
+    //----------excercise-------------
+    /*Đếm số lượng node của 1 linkedList cho trước mà không dùng method size()*/
+    public static int countNodes(LinkedList<Integer> linkedList){
+        int result =0;
+        for(int node:  linkedList){
+            result ++;
+        }
+        return result;
+    }
+    /*Đảo ngược 1 linkedLisst*/
+    public static LinkedList<Integer> reverseLinkedList(LinkedList<Integer> linkedList){
+        LinkedList<Integer> result = new LinkedList<>();
+        while(!linkedList.isEmpty()){
+            result.add(linkedList.removeLast());
+//            result.add(linkedList.getLast());
+//            linkedList.removeLast();
+        }
+        return  result;
+    }
+    public static boolean hasCircle(ListNode head){
+        if(head == null || head.next == null) return false;
+        ListNode fast = head;
+        ListNode slow = head;
+        //Hoặc:
+//        ListNode slow = head.next;
+//        if(fast == slow) return true;
+        while(fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast == slow) return true;
+        }
+        return false;
     }
 
+
+    public static void main(String[] args) {
+
+
+    }
+    class ListNode  {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
 }

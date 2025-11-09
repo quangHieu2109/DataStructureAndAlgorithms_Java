@@ -1,0 +1,10 @@
+Trong java, MAP được sử dụng để lưu trữ và truy xuất dữ liệu theo cặp key và value.
+    Mỗi cặp key và value được gọi là mục nhập (entry). Map trong java chỉ chứa các giá trị key
+    duy nhất. Map rất hữu ích nếu bạn phải tìm kiếm, cập nhật hoặc xóa các phần tử trên dựa vào
+    các key.
+
+Đặc điểm của các lớp kế thừa của Map Interface:
+    - HashMap: các phần tử không duy trì trật tự.
+    - LinkedHashMap: các phân tử duy trì trật tự được thêm vào.
+    - TreeMap: các phần tử duy trì trật tự theo giá trị
+

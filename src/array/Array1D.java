@@ -1,7 +1,9 @@
 package array;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Array1D {
 /*Khai báo và khởi tạo*/
@@ -113,14 +115,59 @@ public class Array1D {
         int[][] arr2d = new  int[2][2];
         System.out.println("Print 2dArray: "+Arrays.deepToString(arr2d));
     }
+    //Vận dụng
+    /*Viết hàm tính tổng giá trị các phần tử của 1 array*/
+    public static int sumArray(int[] array){
+        int sum = 0;
+        for(int value: array){
+            sum += value;
+        }
+        return sum;
+    }
+    public static int mostFrequentElement(int[] arr){
+        Map<Integer,Integer> countAppend = new HashMap<>();
+        for(int value: arr){
+            if(countAppend.containsKey(value)){
+                countAppend.put(value, countAppend.get(value) + 1);
+            }else {
+                countAppend.put(value, 1);
+            }
+        }
+        int result = arr[0];
+        int maxFreq = countAppend.get(arr[0]);
+        for(Map.Entry<Integer,Integer> entry: countAppend.entrySet()){
+            if(entry.getValue() > maxFreq) {
+                maxFreq = entry.getValue();
+                result = entry.getKey();
+            }
+        }
+        return result;
+    }
+    /*Tìm chuỗi các phần tử liên tiếp có tổng lớp nhất*/
+    public static int maximumSubArraySum(int[] arr){
+        /*Ta có: nếu tổng các phần tử trước đó và phần tử hiện tại mà nhỏ hơn hoặc
+        bằng phần tử hiện tại thì các phần tử trước đó không giúp tổng subArray lớn hơn
+        -> bắt đầu subArray ở phần tử hiện tại.
+         */
+        int curSum = arr[0];
+        int maxSum = arr[0];
+        for(int i =1; i<arr.length; i++){
+            curSum = Math.max(curSum+arr[i],arr[i]);
+            maxSum = Math.max(curSum, maxSum);
+
+        }
+        return maxSum;
+    }
     public static void main(String[] args) {
-        int arr_1[] = {1, 3,5, 0, 7, -1, 6};
+        int arr_1[] = {1, 3,5, 0, 7, 1, 6};
+        System.out.println("Sum of array: "+sumArray(arr_1));
+        System.out.println("Most append elelment: "+ mostFrequentElement(arr_1));
 //        getElementOfArray(arr_1, -1); //Index invalid!
 //        getElementOfArray(arr_1, arr_1.length);//Index invalid!
 //        getElementOfArray(arr_1, 0);//1
 //        //-----------------//
 //        traverseArray(arr_1);
-        methodsOdArrays(arr_1);
+//        methodsOdArrays(arr_1);
 
     }
 

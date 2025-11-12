@@ -14,6 +14,7 @@ public class MapEx {
         hashMap.put("first", 1); //1
         hashMap.put("second", 2);//1 2
         hashMap.put("first", 11);//11 2
+
     //Chèn 1 map chỉ định vào map hiện tại
         linkedHashMap.putAll(hashMap);
     //Xóa phần tử dựa trên Key
@@ -30,15 +31,23 @@ public class MapEx {
         Set entrySet =  hashMap.entrySet();
 
     }
+        //-----excercise -----
+    public static Map<Integer, List<String>> groupByLength(List<String> input){
+        Map<Integer, List<String>> result = new HashMap<>();
+        for(String st: input){
+            int length = st.length();
+            if(result.containsKey(length)){
+                result.get(length).add(st);
+            }else{
+                result.put(length, new ArrayList<>(Arrays.asList(st)));
+            }
+        }
 
+        return result;
+    }
     public static void main(String[] args) {
-        mapMethods();
-        for(Map.Entry<String, Integer> entry : linkedHashMap.entrySet()){
-            System.out.println("Key: " + entry.getKey() + " Value: " + entry.getValue());
-        }
-        System.out.println("---------------------------------");
-        for(Object key : hashMap.keySet()){
-            System.out.println("Key: " + key + " Value: " + hashMap.get(key));
-        }
+//        List<String> list= Arrays.asList("st", "ss");
+//        list.add("vv");
+//        System.out.println(list.size());
     }
 }

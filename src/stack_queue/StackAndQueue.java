@@ -51,8 +51,80 @@ public class StackAndQueue {
         out =  queue.peek();
         out = queue.element();
     }
+    public static String reverseString(String input){
+        Stack<Character> st = new Stack<>();
+        for(char c :  input.toCharArray()){
+            st.push(c);
+        }
+        StringBuffer sb = new StringBuffer();
+        while(!st.isEmpty()){
+            sb.append(st.pop());
+        }
+        return sb.toString();
+
+    }
+    public static boolean validBracket(String input){
+        List<String> openBracket = List.of("{", "[", "(");
+        List<String> closeBracket = List.of("}", "]", ")");
+        Map<String, String> bracket = new HashMap<>();
+        bracket.put(")", "(");
+        bracket.put("]", "[");
+        bracket.put("}", "{");
+        Stack<String> bracketsOfInput = new Stack();
+        //Duyệt từng kí tự của input
+        for(char c : input.toCharArray()){
+//            System.out.println("Current character: "+ c);
+            //Kiểm tra xem nó có phải là ngoặc mở hay không
+            if(openBracket.contains(String.valueOf(c))){
+//                System.out.println("Open bracket: "+c);
+                //Đúng -> thêm vào stack
+                bracketsOfInput.push(String.valueOf(c));
+            //Sai -> kiểm tra có phải ngoặc đóng hay không
+            }else if(closeBracket.contains(String.valueOf(c))){
+//                System.out.println("Close bracket: "+c);
+
+                //Đúng -> Kiểm tra xem trước đó có ngoặc mở tương ứng hay không
+                String open = bracket.get(String.valueOf(c));
+                //Có -> cặp ngoặc hợp lệ
+                if(!bracketsOfInput.isEmpty() && bracketsOfInput.peek().equals(open)){
+                    bracketsOfInput.pop();
+                }else{
+                    //Không có -> không hợp lệ
+                    return false;
+                }
+            }
+        }
+        if(!bracketsOfInput.isEmpty()) return false;
+        return true;
+    }
+    public static void closestSmaller(int[] input){
+        Stack<Integer> inputElement = new Stack<>();
+        for(int i : input){
+            inputElement.push(i);
+        }
+        outWhile:
+        while(!inputElement.isEmpty()){
+            int curValue = inputElement.pop();
+            Stack <Integer> tempElement = new  Stack<>();
+            tempElement.addAll(inputElement);
+            while(!tempElement.isEmpty()){
+                if(tempElement.peek()<curValue){
+                    System.out.println("The closet less than value of "+curValue+" is "+tempElement.pop());
+                    continue outWhile;
+                }
+                tempElement.pop();
+            }
+            System.out.println("There are no element less than "+curValue);
+        }
+    }
     public static void main(String[] args) {
-        Stack st = new Stack();
+        stack = new Stack();
+        stack.addAll(Arrays.asList(1, 4, 3, 2, 5, 4, 1, 4));
+        closestSmaller(new int[]{1, 4, 3, 2, 5, 4, 1, 4});
+//       Stack<Integer> copy = new Stack<>();
+//       copy.addAll(stack);
+//        System.out.println(stack);
+//        System.out.println(copy);
 
     }
 }

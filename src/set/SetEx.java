@@ -50,7 +50,32 @@ public class SetEx {
         stringBuffer.append("]");
         return stringBuffer.toString();
     }
+    public static boolean isSubSetOf(Set<Integer> original, Set<Integer> sub) {
+        Set copy = new  HashSet(original);
+        copy.addAll(sub);
+        return copy.size() == original.size();
+//        return copy.containsAll(sub);
+    }
+    //Nhận vào chuỗi ký tự, đếm số phần tử duy nhất được ngăn cách bằng khoảng trắng
+    public static int countUnique(String input){
+        if(input == null || input.length() == 0) return 0;
+        String[] inputSplit = input.trim().split("\\s+");
+        Set set = new HashSet();
+        for(String st: inputSplit){
+            set.add(st);
+        }
 
+        return set.size();
+    }
+    //Viết hàm nhận vào 2 danh sách và trả về danh sách gọp mà không chứa phần tử chung
+    public static List<Integer> symmetricDifference(List<Integer> list1, List<Integer> list2) {
+        Set<Integer> result = new HashSet<>(list1);
+        result.addAll(list2);
+        Set<Integer> intersection  = new HashSet<>(list1);
+        intersection.retainAll(list2); // lấy những phần tử chung giữa list1 và list2
+        result.removeAll(intersection);
+        return new ArrayList<>(result);
+    }
     public static void main(String[] args) {
         List values = Arrays.asList(3, 4, -1, 5, -5, 6, 2);
         hashSet.addAll(values);
